@@ -395,7 +395,7 @@ class TextFileCorrector:
                 print(f"输入文件: {input_file_path}")
                 print(f"输出文件: {output_file_path}")
                 print(f"总行数: {total_lines}")
-                print(f"纠错行数: {corrected_count}")
+                # print(f"纠错行数: {corrected_count}")
                 print(f"使用策略: {strategy}")
             
             return {
@@ -442,24 +442,8 @@ def main():
         
         # 检查输入文件是否存在
         if not os.path.exists(input_file):
-            print(f"创建示例输入文件: {input_file}")
-            # 创建示例输入文件
-            with open(input_file, 'w', encoding='utf-8') as f:
-                sample_texts = [
-                    "少先队员因该为老人让坐",
-                    "人可能够识别这个问题", 
-                    "这个问题很中要",
-                    "老是较书的人",
-                    "我爱我的祖国天氨门",
-                    "今天新情很好，我很高心",
-                    "我去那里买书藉",
-                    "因该好好蒙习",
-                    "他较书较得很好",
-                    "这本书藉很有意思"
-                ]
-                for text in sample_texts:
-                    f.write(text + '\n')
-            print(f"已创建示例文件，包含 {len(sample_texts)} 行测试文本")
+            print(f"缺少输入文件")
+            return 0
         
         # 使用投票策略处理文件
         print(f"\n使用投票策略处理文件...")
